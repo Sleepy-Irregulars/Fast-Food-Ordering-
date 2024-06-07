@@ -1,0 +1,52 @@
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+from customtkinter import *
+from PIL import Image, ImageTk
+import customtkinter
+import csv
+import ctypes
+
+def snacks_clicked():
+   
+    pass
+
+def drinks_clicked():
+   
+    pass
+
+root = CTk()
+root.title("FFO")
+root.geometry("400x715")
+root.resizable(False,False)
+width = 400
+height = 715
+
+# ICON IMAGE
+background_image = Image.open(r"C:\Users\User\Desktop\DELA CRUZ\Second Page.png")
+background_image = ImageTk.PhotoImage(background_image)
+SnacksImg= ImageTk.PhotoImage(Image.open(r"C:\Users\User\Desktop\DELA CRUZ\Fast-Food-Ordering--main\Fast-Food-Ordering--main\FFO images-20240531T001429Z-001\FFO images\SNACKS (2).png").resize((200,169)))
+DrinksImg=ImageTk.PhotoImage(Image.open(r"C:\Users\User\Desktop\DELA CRUZ\Fast-Food-Ordering--main\Fast-Food-Ordering--main\FFO images-20240531T001429Z-001\FFO images\Drinks (2).png").resize((200,169)))
+MenuTabImg= ImageTk.PhotoImage(Image.open(r"C:\Users\User\Desktop\DELA CRUZ\Fast-Food-Ordering--main\Fast-Food-Ordering--main\FFO images-20240531T001429Z-001\FFO images\tab for page 2.png").resize((60,40)))
+CartTabImg= ImageTk.PhotoImage(Image.open(r"C:\Users\User\Desktop\DELA CRUZ\Fast-Food-Ordering--main\Fast-Food-Ordering--main\FFO images-20240531T001429Z-001\FFO images\Cart.png").resize((60,40)))
+
+frame = Frame(root)
+frame.pack(fill=BOTH, expand=True)  # Use BOTH and expand=True to make the frame expand
+
+#Canvas Image
+canvas1 = Canvas(frame, bg="white", height=height, width=width, highlightthickness=0)
+canvas1.create_image(0, 0, anchor=NW, image=background_image)
+canvas1_image = background_image
+canvas1.create_image(width/1.8, height/2.3, anchor=SE, image=SnacksImg)
+canvas1.create_image(width/2.2, height/2, anchor=NW, image=DrinksImg)
+canvas1.create_image(width/5.2, height/1.05, anchor=SW, image=MenuTabImg)
+canvas1.create_image(width/1.3, height/1.115, anchor=NE, image=CartTabImg)
+canvas1.pack(padx=0.1,pady=0.1)
+
+snacks_button = Button(frame, image=SnacksImg, command=snacks_clicked, bd=0, highlightthickness=0)
+snacks_button.place(x=width/1.8, y=height/2.3, anchor=SE)
+
+drinks_button = Button(frame, image=DrinksImg, command=drinks_clicked, bd=0, highlightthickness=0)
+drinks_button.place(x=width/2.2, y=height/2, anchor=NW)
+
+root.mainloop()
