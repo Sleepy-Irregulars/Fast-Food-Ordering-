@@ -390,7 +390,7 @@ def drinks_page():
     pineapplejuice_button = Button(frame, image=PineappleJuiceImg, command=lambda: open_new_window(drinks_window, pineapplejuice_window), borderwidth=0, highlightthickness=0)
     pineapplejuice_button.place(x=115, y=500)
 
-    back_button = Button(frame, image=BackImg, command=lambda: open_new_window(drinks_window, drinks_page), borderwidth=0, highlightthickness=0)
+    back_button = Button(frame, image=BackImg, command=lambda: open_new_window(drinks_window, second_page), borderwidth=0, highlightthickness=0)
     back_button.place(x=10, y=10)
 
     drinks_window.mainloop()
